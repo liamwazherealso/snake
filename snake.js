@@ -9,6 +9,10 @@ let direction = 'RIGHT';
 let score = 0;
 
 document.addEventListener('keydown', changeDirection);
+document.getElementById('up').addEventListener('click', () => changeDirection({ keyCode: 38 }));
+document.getElementById('down').addEventListener('click', () => changeDirection({ keyCode: 40 }));
+document.getElementById('left').addEventListener('click', () => changeDirection({ keyCode: 37 }));
+document.getElementById('right').addEventListener('click', () => changeDirection({ keyCode: 39 }));
 
 function changeDirection(event) {
     if (event.keyCode === 37 && direction !== 'RIGHT') direction = 'LEFT';
@@ -64,4 +68,3 @@ function collision(head, array) {
 }
 
 let game = setInterval(draw, 100);
-
